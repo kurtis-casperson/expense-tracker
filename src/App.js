@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 import './index.css'
 import ExpenseTable from './components/ExpenseTable'
 import CreateExpense from './components/CreateExpense'
@@ -7,47 +8,41 @@ import Header from './components/Header'
 
 const App = () => {
   // from createxpense
-  const [expense, setExpense] = useState()
+  // useState() was null .
+  // this is where data is being stored .  Create expense is passed the formData, setFormData props
+
+  const [formData, setFormData] = useState({
+    amount: '',
+    merchant: '',
+    paymentType: '',
+    date: '',
+  })
   // accessing state from above to be able to add new row
   const [expenses, setExpenses] = useState([])
-
-  // const ModifyTable = () => {
-  //   const [expenses, setExpense] = useState()
-
-  // function handleInputChange(event) {
-  //   const { name, value } = event.target
-
-  //   setExpense((prevExpense) => ({ ...prevExpense, [name]: value }))
-  // }
-  // }
-  // expenseDescription = expenses.description
-  // expenseAmount = expenses.amount
 
   return (
     <>
       <div>
-        {console.log('expense', expense)}
         <Header />
       </div>
       <div>
-        <CreateExpense expense={expense} setExpense={setExpense} />
+        <CreateExpense formData={formData} setFormData={setFormData} />
       </div>
-      <div className="submit-expense">
-        <button
-          type="submit"
+      <div>
+        <Button
+          type="button"
+          // className="btn btn-primary btn-lg"
+          variant="primary"
+          size="lg"
           onClick={() => {
             const clonedExpenses = [...expenses]
-            clonedExpenses.push(expense)
+            clonedExpenses.push(formData)
             setExpenses(clonedExpenses)
-            setExpense('')
+            setFormData({ amount: '', merchant: '', paymentType: '', date: '' })
           }}
         >
-          {console.log('expenses', expenses)}
           Add Expense
-          {/* onClick= {pass changeState function} */}
-          {/* onClick= {addRow} */}
-          {/* when button pressed useState changes and eventlistener from table used to add row to table */}
-        </button>
+        </Button>
       </div>
       <div>
         <ExpenseTable />
@@ -56,5 +51,5 @@ const App = () => {
     </>
   )
 }
-// }
+
 export default App
