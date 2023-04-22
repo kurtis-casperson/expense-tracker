@@ -1,17 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import ExpenseTable from './ExpenseTable'
-import CreateExpense from './CreateExpense'
-import Header from './Header'
+import ExpenseTable from './components/ExpenseTable'
+import CreateExpense from './components/CreateExpense'
+import AddTableRow from './components/TableRows'
+import Header from './components/Header'
 import reportWebVitals from './reportWebVitals'
+import Form from './Practice'
+import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Header />
+    {/* <Header />
     <CreateExpense />
-    <ExpenseTable />
+    <ExpenseTable /> */}
+    <App />
   </React.StrictMode>
 )
 
