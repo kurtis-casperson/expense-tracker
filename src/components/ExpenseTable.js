@@ -12,12 +12,12 @@ const ExpenseTable = ({ expenses }) => {
 
   return (
     <>
-      <div className="Table">
+      <div>
         <table className="Expense-Table">
           <thead>
             <tr>
               <th>Date</th>
-              <th>Description</th>
+              <th>Merchant Type</th>
               <th>Payment</th>
               <th>Amount</th>
               <th>Remove</th>
