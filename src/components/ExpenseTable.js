@@ -1,9 +1,9 @@
 import React from 'react'
-// import './components/App.css'
-// import CreateExpense from './CreateExpense'
+import TableRows from './TableRows'
 
 // let props = CreateExpense
-const ExpenseTable = ({ expenses }) => {
+const ExpenseTable = (props) => {
+  const { expenses, removeDataRow } = props
   // function AddRow() {
   // Need to import the state from submit buttonmethod . Or change state from button method
   // button is pressed and a new row is added to the table .  Each new row is added with the
@@ -23,6 +23,9 @@ const ExpenseTable = ({ expenses }) => {
               <th>Remove</th>
             </tr>
           </thead>
+          <tbody>
+            <TableRows expenses={expenses} removeDataRow={removeDataRow} />
+          </tbody>
         </table>
       </div>
     </>
