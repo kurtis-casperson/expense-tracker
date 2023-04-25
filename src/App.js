@@ -21,7 +21,7 @@ const App = () => {
   })
 
   // accessing state from above to be able to add new row
-  const [expenseRow, setExpenses] = useState([])
+  const [expenseRow, setRowData] = useState([])
 
   let clonedExpenses
   const addDataRow = () => {
@@ -34,14 +34,13 @@ const App = () => {
       return
     }
     clonedExpenses = [...expenseRow]
-    console.log('formData.id', formData.id)
     clonedExpenses.push(formData)
-    setExpenses(clonedExpenses)
+    setRowData(clonedExpenses)
   }
 
   const removeDataRow = (id) => {
     const filteredExpenses = expenseRow.filter((expense) => expense.id !== id)
-    setExpenses(filteredExpenses)
+    setRowData(filteredExpenses)
   }
 
   return (
