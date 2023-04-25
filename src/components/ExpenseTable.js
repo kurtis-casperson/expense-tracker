@@ -3,7 +3,7 @@ import TableRows from './TableRows'
 
 // let props = CreateExpense
 const ExpenseTable = (props) => {
-  const { expenses, removeDataRow } = props
+  const { expenseRow, removeDataRow } = props
   // function AddRow() {
   // Need to import the state from submit buttonmethod . Or change state from button method
   // button is pressed and a new row is added to the table .  Each new row is added with the
@@ -24,7 +24,7 @@ const ExpenseTable = (props) => {
             </tr>
           </thead>
           <tbody>
-            <TableRows expenses={expenses} removeDataRow={removeDataRow} />
+            <TableRows expenseRow={expenseRow} removeDataRow={removeDataRow} />
           </tbody>
         </table>
       </div>

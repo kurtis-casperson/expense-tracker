@@ -1,10 +1,10 @@
 import React from 'react'
 
 const TableRows = (props) => {
-  const { removeDataRow, expenses } = props
+  const { removeDataRow, expenseRow } = props
   return (
     <>
-      {expenses.map((expense, index) => (
+      {expenseRow.map((expense, index) => (
         <tr key={index}>
           <td>{expense.date}</td>
           <td>{expense.merchant}</td>
