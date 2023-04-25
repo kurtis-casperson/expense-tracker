@@ -21,17 +21,26 @@ const App = () => {
   })
 
   // accessing state from above to be able to add new row
-  const [expenses, setExpenses] = useState([])
+  const [expenseRow, setExpenses] = useState([])
 
   let clonedExpenses
   const addDataRow = () => {
-    clonedExpenses = [...expenses]
+    if (
+      formData.amount === '' ||
+      formData.merchant === '' ||
+      formData.paymentType === '' ||
+      formData.date === ''
+    ) {
+      return
+    }
+    clonedExpenses = [...expenseRow]
+    console.log('formData.id', formData.id)
     clonedExpenses.push(formData)
     setExpenses(clonedExpenses)
   }
 
   const removeDataRow = (id) => {
-    const filteredExpenses = expenses.filter((expense) => expense.id !== id)
+    const filteredExpenses = expenseRow.filter((expense) => expense.id !== id)
     setExpenses(filteredExpenses)
   }
 
@@ -46,8 +55,8 @@ const App = () => {
       <div>
         <Button
           type="submit"
-          variant="warning"
-          size="lg"
+          variant="success"
+          size="sm"
           onClick={() => {
             addDataRow()
             setFormData({
@@ -63,7 +72,7 @@ const App = () => {
         </Button>
       </div>
       <div>
-        <ExpenseTable removeDataRow={removeDataRow} expenses={expenses} />
+        <ExpenseTable removeDataRow={removeDataRow} expenseRow={expenseRow} />
       </div>
     </>
   )
