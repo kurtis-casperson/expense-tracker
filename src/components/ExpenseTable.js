@@ -4,11 +4,6 @@ import React from 'react'
 // let props = CreateExpense
 const ExpenseTable = (props) => {
   const { removeDataRow } = props
-  // function AddRow() {
-  // Need to import the state from submit buttonmethod . Or change state from button method
-  // button is pressed and a new row is added to the table .  Each new row is added with the
-  // the current state.
-  // }
 
   return (
     <>
