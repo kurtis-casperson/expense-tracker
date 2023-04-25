@@ -10,6 +10,8 @@ const CreateExpense = (props) => {
     // dont understnad this totally
     // my interpretation: using spread operator to copy the formdata. and then accessing
     // name and value from the form?
+    // is setFormData being passed here from App.js or passed here to App.js..
+    // i think it's being accessed here and passed from App.js..?
     setFormData((prevExpense) => ({ ...prevExpense, [name]: value }))
   }
 

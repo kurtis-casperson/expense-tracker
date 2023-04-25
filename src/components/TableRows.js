@@ -1,19 +1,12 @@
 import React from 'react'
-
+import ExpenseTable from './ExpenseTable'
+// import ExpenseTable from 'ExpenseTable'
 const TableRows = (props) => {
-  const { removeDataRow, expenseRow } = props
+  const { expenseRow } = props
   return (
     <>
       {expenseRow.map((expense, index) => (
-        <tr key={index}>
-          <td>{expense.date}</td>
-          <td>{expense.merchant}</td>
-          <td>{expense.paymentType}</td>
-          <td>{expense.amount}</td>
-          <td>
-            <button onClick={() => removeDataRow(expense.id)}>X</button>
-          </td>
-        </tr>
+        <ExpenseTable key={index} {...expense} />
       ))}
     </>
   )
