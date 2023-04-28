@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import './index.css'
 import ExpenseTable from './components/ExpenseTable'
 import CreateExpense from './components/CreateExpense'
 import Header from './components/Header'
+import './App.css'
 
 const App = () => {
-  // from createxpense
-  // useState() was null .
-  // this is where data is being stored .  Create expense is passed the formData, setFormData props
-
-  // form data is an array and it is set to the default value of the state
-  // in this case expenseObject.  setFormData then changes the state with a method that access the onchange of name and value
-  const [formData, setFormData] = useState({
+  const expenseObject = {
     id: Math.random(),
     amount: '',
     merchant: '',
     paymentType: '',
     date: '',
-  })
+  }
 
-  // accessing state from above to be able to add new row
-  const [expenseRow, setRowData] = useState([])
+  const [formData, setFormData] = useState(
+    JSON.parse(localStorage.getItem('formData')) || expenseObject
+  )
+
+  const [expenseRow, setRowData] = useState(
+    []
+    // JSON.parse(localStorage.getItem('rowData')) || []
+  )
 
   let clonedExpenses
   const addDataRow = () => {
@@ -43,6 +44,16 @@ const App = () => {
     setRowData(filteredExpenses)
   }
 
+  useEffect(() => {
+    console.log('useEffectexecute')
+    localStorage.setItem('formData', JSON.stringify(formData))
+  }, [formData])
+
+  useEffect(() => {
+    console.log('useEffectRowData')
+    localStorage.setItem('rowData', JSON.stringify(expenseRow))
+  }, [expenseRow])
+
   return (
     <>
       <div>
@@ -51,11 +62,11 @@ const App = () => {
       <div>
         <CreateExpense formData={formData} setFormData={setFormData} />
       </div>
-      <div>
+      <div className="text-center">
         <Button
           type="submit"
-          variant="success"
-          size="sm"
+          variant="custom"
+          size="lg"
           onClick={() => {
             addDataRow()
             setFormData({
