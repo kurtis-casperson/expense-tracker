@@ -39,7 +39,7 @@ textarea {
   border: none;
   padding: 5px;
   margin: 5px;
-  box-shadow: 0 0 5px 2px #6a80daad;
+  box-shadow: 2px 2px 5px 1px #6a80daad;
   border-radius: 10px;
 }
 
@@ -47,7 +47,7 @@ textarea {
   padding: 5px;
   border: none;
   margin: 5px;
-  box-shadow: 0 0 5px 2px #6a80daad;
+  box-shadow: 2px 2px 5px 1px #6a80daad;
   border-radius: 10px;
 }
 
