@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 const TableRows = (props) => {
   const { removeDataRow, expenseRow } = props
@@ -11,7 +12,14 @@ const TableRows = (props) => {
           <td>{expense.paymentType}</td>
           <td>{expense.amount}</td>
           <td>
-            <button onClick={() => removeDataRow(expense.id)}>X</button>
+            <Button
+              type="submit"
+              variant="danger"
+              size="sm"
+              onClick={() => removeDataRow(expense.id)}
+            >
+              X
+            </Button>
           </td>
         </tr>
       ))}

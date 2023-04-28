@@ -16,42 +16,45 @@ const CreateExpense = (props) => {
   return (
     <>
       <form className="expense-input-container">
-        <div className="date">
-          <input
-            type="date"
-            placeholder="Date"
-            name="date"
-            value={formData.date}
-            onChange={handleInputChange}
-          ></input>
+        <div>
+          <div className="row-one">
+            <input
+              type="date"
+              placeholder="Date"
+              name="date"
+              value={formData.date}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <div className="row-one" placeholder="Merchant Type">
+            <input
+              type="text"
+              name="merchant"
+              placeholder="Merchant Type"
+              value={formData.merchant}
+              onChange={handleInputChange}
+            ></input>
+          </div>
         </div>
-        <div className="merchant-type" placeholder="Merchant Type">
-          <input
-            type="text"
-            name="merchant"
-            placeholder="Merchant Type"
-            value={formData.merchant}
-            onChange={handleInputChange}
-          ></input>
-        </div>
-
-        <div className="payment-type">
-          <input
-            type="text"
-            name="paymentType"
-            placeholder="Cash, Card, or Crypto.."
-            value={formData.paymentType}
-            onChange={handleInputChange}
-          ></input>
-        </div>
-        <div className="expense-amount">
-          <input
-            type="number"
-            placeholder="Amount"
-            name="amount"
-            value={formData.amount}
-            onChange={handleInputChange}
-          />
+        <div>
+          <div className="row-two">
+            <input
+              type="text"
+              name="paymentType"
+              placeholder="Cash, Card, or Crypto.."
+              value={formData.paymentType}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <div className="row-two">
+            <input
+              type="number"
+              placeholder="Amount"
+              name="amount"
+              value={formData.amount}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
       </form>
     </>
