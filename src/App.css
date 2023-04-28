@@ -1,0 +1,104 @@
+body {
+  background-color: rgba(247, 237, 250, 0.993);
+  font: 'Open Sans', 'Helvetica Neue';
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 10px;
+  color: rgba(129, 75, 200, 0.993);
+  margin: 50px;
+  box-shadow: 0 5px 10px 2px rgba(118, 4, 167, 0.279);
+}
+
+.btn-custom {
+  background-color: #6a80daad;
+}
+
+input[type='text'],
+textarea {
+  border: none;
+  background-color: rgba(247, 237, 250, 0.993);
+}
+input[type='date'],
+textarea {
+  border: none;
+  background-color: rgba(247, 237, 250, 0.993);
+}
+
+input[type='number'],
+textarea {
+  border: none;
+  background-color: rgba(247, 237, 250, 0.993);
+}
+
+.row-one {
+  padding: 10px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 0 0 5px 2px #6a80daad;
+  border-radius: 10px;
+}
+
+.row-two {
+  padding: 5px;
+  border: none;
+  margin: 5px;
+  box-shadow: 0 0 5px 2px #6a80daad;
+  border-radius: 10px;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+}
+
+.expense-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 650px;
+  margin: 30px auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0 0 5px 2px rgba(118, 4, 167, 0.279);
+}
+
+.Expense-Table {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+table {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-collapse: collapse;
+  border-radius: 20px;
+}
+
+th {
+  width: 10rem;
+  height: 4rem;
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgba(168, 133, 220, 0.489);
+}
+
+td {
+  width: 10rem;
+  height: 4rem;
+  border: 2px solid #fdfdfd;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 15px;
+}
