@@ -5,7 +5,11 @@ const CreateExpense = (props) => {
 
   function handleInputChange(event) {
     const { name, value } = event.target
-
+    // dont understnad this totally
+    // my interpretation: using spread operator to copy the formdata. and then accessing
+    // name and value from the form?
+    // can anything be passed into the ssetState method?
+    // look at master branch
     setFormData((prevExpense) => ({ ...prevExpense, [name]: value }))
   }
 
