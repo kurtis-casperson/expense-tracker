@@ -23,7 +23,6 @@ const App = () => {
     JSON.parse(localStorage.getItem('rowData')) || []
   )
 
-  let clonedExpenses
   const addDataRow = () => {
     if (
       formData.amount === '' ||
@@ -33,9 +32,8 @@ const App = () => {
     ) {
       return
     }
-    clonedExpenses = [...rowData]
-    clonedExpenses.push(formData)
-    setRowData(clonedExpenses)
+
+    setRowData((expenseRow) => [...expenseRow, formData])
   }
 
   const removeDataRow = (id) => {
