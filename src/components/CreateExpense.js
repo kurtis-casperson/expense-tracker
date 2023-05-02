@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Button } from 'react-bootstrap'
 
-const CreateExpense = (props) => {
-  const { formData, setFormData } = props
+const CreateExpense = ({ setRowData }) => {
+  const expenseObject = {
+    id: Math.random(),
+    amount: '',
+    merchant: '',
+    paymentType: '',
+    date: '',
+  }
+
+  const [formData, setFormData] = useState(
+    JSON.parse(localStorage.getItem('formData')) || expenseObject
+  )
+
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData))
+  }, [formData])
+
+  const addDataRow = () => {
+    if (
+      formData.amount === '' ||
+      formData.merchant === '' ||
+      formData.paymentType === '' ||
+      formData.date === ''
+    ) {
+      return
+    }
+
+    setRowData((expenseRow) => [...expenseRow, formData])
+  }
 
   function handleInputChange(event) {
     const { name, value } = event.target
@@ -53,6 +81,25 @@ const CreateExpense = (props) => {
           </div>
         </div>
       </form>
+      <div className="text-center">
+        <Button
+          type="submit"
+          variant="custom"
+          size="lg"
+          onClick={() => {
+            addDataRow()
+            setFormData({
+              id: Math.random(),
+              amount: '',
+              merchant: '',
+              paymentType: '',
+              date: '',
+            })
+          }}
+        >
+          Add Expense
+        </Button>
+      </div>
     </>
   )
 }
