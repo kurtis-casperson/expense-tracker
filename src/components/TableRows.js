@@ -2,10 +2,10 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 
 const TableRows = (props) => {
-  const { removeDataRow, expenseRow } = props
+  const { removeDataRow, rowData } = props
   return (
     <>
-      {expenseRow.map((expense, index) => (
+      {rowData.map((expense, index) => (
         <tr key={index}>
           <td>{expense.date}</td>
           <td>{expense.merchant}</td>

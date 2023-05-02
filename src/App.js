@@ -19,9 +19,8 @@ const App = () => {
     JSON.parse(localStorage.getItem('formData')) || expenseObject
   )
 
-  const [expenseRow, setRowData] = useState(
-    []
-    // JSON.parse(localStorage.getItem('rowData')) || []
+  const [rowData, setRowData] = useState(
+    JSON.parse(localStorage.getItem('rowData')) || []
   )
 
   let clonedExpenses
@@ -34,34 +33,28 @@ const App = () => {
     ) {
       return
     }
-    clonedExpenses = [...expenseRow]
+    clonedExpenses = [...rowData]
     clonedExpenses.push(formData)
     setRowData(clonedExpenses)
   }
 
   const removeDataRow = (id) => {
-    const filteredExpenses = expenseRow.filter((expense) => expense.id !== id)
+    const filteredExpenses = rowData.filter((expense) => expense.id !== id)
     setRowData(filteredExpenses)
   }
 
   useEffect(() => {
-    console.log('useEffectexecute')
     localStorage.setItem('formData', JSON.stringify(formData))
   }, [formData])
 
   useEffect(() => {
-    console.log('useEffectRowData')
-    localStorage.setItem('rowData', JSON.stringify(expenseRow))
-  }, [expenseRow])
+    localStorage.setItem('rowData', JSON.stringify(rowData))
+  }, [rowData])
 
   return (
     <>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <CreateExpense formData={formData} setFormData={setFormData} />
-      </div>
+      <Header />
+      <CreateExpense formData={formData} setFormData={setFormData} />
       <div className="text-center">
         <Button
           type="submit"
@@ -81,9 +74,7 @@ const App = () => {
           Add Expense
         </Button>
       </div>
-      <div>
-        <ExpenseTable removeDataRow={removeDataRow} expenseRow={expenseRow} />
-      </div>
+      <ExpenseTable removeDataRow={removeDataRow} rowData={rowData} />
     </>
   )
 }

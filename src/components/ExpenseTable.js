@@ -2,7 +2,7 @@ import React from 'react'
 import TableRows from './TableRows'
 
 const ExpenseTable = (props) => {
-  const { expenseRow, removeDataRow } = props
+  const { rowData, removeDataRow } = props
 
   return (
     <>
@@ -19,7 +19,7 @@ const ExpenseTable = (props) => {
           </thead>
 
           <tbody>
-            <TableRows expenseRow={expenseRow} removeDataRow={removeDataRow} />
+            <TableRows rowData={rowData} removeDataRow={removeDataRow} />
           </tbody>
         </table>
       </div>
