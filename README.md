@@ -23,10 +23,10 @@ What I learned
 
 Expense Tracker Functionality :
 
-- Input Date, Merchant, Currency, and Amount data that is added to as a table row
+- Input Date, Merchant, Currency, and Amount data added as a table row
 - Unable to add a row if any data input is left blank
 - Able to delete any of the individual rows
-- User data can be stored in local storage, and retreived upon returning to the page
+- User data can be stored in local storage, and is available upon returning to the page or refreshing
 
 ## Author
 
