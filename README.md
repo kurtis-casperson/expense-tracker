@@ -8,7 +8,7 @@ Check out the project! [here](https://expense-tracker-by-kurtis.herokuapp.com/)
 
 This is my first react app!
 
-I have been exposed to react native at a previous job, so the structure of a react app was not totally foreign to me, but it did take some time for me to understand how to structure my files and components in an easy to use manner. I really enjoyed learning some of the "magic" that react allows for while still building on my javascript skills.
+I have been exposed to react native at a previous job, so the structure of a react app was not totally foreign to me, but it did take some time for me to understand how to structure my files and components in an easy to use manner. I really enjoyed learning some "magic" react fundamentals while still building on my javascript skills.
 
 Using Bootstrap was a nice addition to complement my CSS, and streamline some of my button styles.
 
@@ -17,9 +17,9 @@ What I learned
 - Passing and Receiving Props
 - Structuring Components
 - The Table element
-- Bootstrap
+- useEffect() & useState()
 - LocalStorage
-- useEffect()
+- Bootstrap
 
 Expense Tracker Functionality :
 
